@@ -5,9 +5,7 @@ function Child({cart,onDelete}){
 
         <div className='child'>
         <h1>Child Component</h1>
-        <li></li>
-        <button></button>
-        <ul>
+        {cart && <ul>
         {
           cart.map((item,index)=>(
             <li>{item.name} - ${item.price}
@@ -15,7 +13,7 @@ function Child({cart,onDelete}){
             </li>
           ))
         }
-        </ul>
+        </ul>}
       </div>
 
         
