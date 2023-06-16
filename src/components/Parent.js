@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Child from './Child.js';
 
 function Parent(){
-  const [items,setItems]=useState([]);
+  const [cart,setCart]=useState([]);
   const [itemName,setItemName]=useState("");
   const [itemPrice,setItemPrice]=useState("");
 
@@ -12,7 +12,7 @@ function Parent(){
         name: itemName,
         price: itemPrice
       };
-      setItems([...items, newItem]);
+      setCart([...cart, newItem]);
       setItemName('');
       setItemPrice('');
     }
@@ -20,9 +20,9 @@ function Parent(){
   }
 
   function removeItem(index) {
-    let updatedItems = [...items];
-    updatedItems.splice(index, 1);
-    setItems(updatedItems);
+    let updatedcart = [...cart];
+    updatedcart.splice(index, 1);
+    setCart(updatedcart);
     }
 
   return(
@@ -37,7 +37,7 @@ function Parent(){
 
       <button onClick={addItem}>Add Item</button>
 
-      <Child items={items} onDelete={removeItem}/>
+      <Child cart={cart} onDelete={removeItem}/>
 
     </div>
   )
