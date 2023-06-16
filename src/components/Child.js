@@ -8,7 +8,7 @@ function Child({items,onDelete}){
         <ul>
         {
           items.map((item,index)=>(
-            <li>{item.name}-${item.price}
+            <li>{item.name} - ${item.price}
             <button onClick={()=>{onDelete(index)}}>Delete</button>
             </li>
           ))
