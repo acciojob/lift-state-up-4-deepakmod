@@ -1,10 +1,22 @@
 import React from 'react';
 
-function Child({key,item,onDelete}){
+function Child({items,onDelete}){
     return(
-        <li>{item.name}-${item.price}
-        <button onClick={()=>{onDelete(key)}}>Delete</button>
-        </li>
+
+        <div className='child'>
+        <h1>Child Component</h1>
+        <ul>
+        {
+          items.map((item,index)=>(
+            <li>{item.name}-${item.price}
+            <button onClick={()=>{onDelete(index)}}>Delete</button>
+            </li>
+          ))
+        }
+        </ul>
+      </div>
+
+        
     )
 }
 

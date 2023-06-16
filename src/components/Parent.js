@@ -36,18 +36,8 @@ function Parent(){
       <input type="number" id="itemPrice" onChange={(e)=>setItemPrice(e.target.value)}/>
 
       <button onClick={addItem}>Add Item</button>
-      
-      <div className='child'>
-        <h1>Child Component</h1>
-        <ul>
-        {
-          items.map((item,index)=>(
-            
-            <Child key={index} item={item} onDelete={()=>{removeItem(index)}}/>
-          ))
-        }
-        </ul>
-      </div>
+
+      <Child items={items} onDelete={removeItem}/>
 
     </div>
   )
